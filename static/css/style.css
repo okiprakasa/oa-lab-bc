@@ -299,3 +299,9 @@ body.dark .home .text{
 .datepicker {
     z-index: 10000;
 }
+.nav-link{
+    padding: 0;
+}
+.menu-links{
+    padding-left: 0;
+}
