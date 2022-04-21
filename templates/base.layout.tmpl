@@ -1,192 +1,132 @@
 {{define "base"}}
     <!DOCTYPE html>
-    <!--suppress JSUnresolvedFunction, JSUnresolvedVariable -->
     <html lang="en">
     <head>
-        <!-- Required meta tags -->
-        <meta charset="utf-8">
+        <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-        <title>OA BLBC</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
               integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="https://unpkg.com/notie/dist/notie.min.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10.15.5/dist/sweetalert2.min.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.2.0/dist/css/datepicker-bs5.min.css">
-        <link rel="stylesheet" type="text/css" href="/static/css/styles.css">
+        <link rel="stylesheet" href="/static/css/style.css">
+        <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+        <style>
+            .nav-link{
+                padding: 0;
+            }
+            .menu-links{
+                padding-left: 0;
+            }
+        </style>
 
-        {{block "css" .}}{{end}}
-
+        <title>OA BLBC</title>
     </head>
-
     <body>
+    <nav class="sidebar close">
+        <header>
+            <div class="image-text">
+                    <span class="image">
+                        <img src="/static/images/logo.png" alt="">
+                    </span>
 
-    {{block "content" .}}{{end}}
+                <div class="text logo-text">
+                    <span class="name">Codinglab</span>
+                    <span class="profession">Web developer</span>
+                </div>
+            </div>
 
-    <footer>
-        {{block "footer" .}}{{end}}
-    </footer>
+            <i class='bx bx-chevron-right toggle'></i>
+        </header>
 
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.2.0/dist/js/datepicker-full.min.js"></script>
-    <script src="https://unpkg.com/notie"></script>
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <div class="menu-bar">
+            <div class="menu">
 
-    {{block "js" .}}{{end}}
+                <li class="search-box">
+                    <i class='bx bx-search icon'></i>
+                    <label>
+                        <input type="text" placeholder="Search...">
+                    </label>
+                </li>
 
-    <script>
-        let attention = Prompt();
+                <ul class="menu-links">
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-home-alt icon' ></i>
+                            <span class="text nav-text">Dashboard</span>
+                        </a>
+                    </li>
 
-        (function () {
-            'use strict';
-            window.addEventListener('load', function () {
-                // Fetch all the forms we want to apply custom Bootstrap validation styles to
-                let forms = document.getElementsByClassName('needs-validation');
-                // Loop over them and prevent submission
-                Array.prototype.filter.call(forms, function (form) {
-                    form.addEventListener('submit', function (event) {
-                        if (form.checkValidity() === false) {
-                            event.preventDefault();
-                            event.stopPropagation();
-                        }
-                        form.classList.add('was-validated');
-                    }, false);
-                });
-            }, false);
-        })();
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-bar-chart-alt-2 icon' ></i>
+                            <span class="text nav-text">Revenue</span>
+                        </a>
+                    </li>
 
-        function notify(msg, msgType) {
-            notie.alert({
-                type: msgType,
-                text: msg,
-            })
-        }
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-bell icon'></i>
+                            <span class="text nav-text">Notifications</span>
+                        </a>
+                    </li>
 
-        function notifyModal(title, text, icon, confirmationButtonText) {
-            Swal.fire({
-                title: title,
-                html: text,
-                icon: icon,
-                confirmButtonText: confirmationButtonText
-            })
-        }
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-pie-chart-alt icon' ></i>
+                            <span class="text nav-text">Analytics</span>
+                        </a>
+                    </li>
 
-        function Prompt() {
-            let toast = function (c) {
-                const{
-                    msg = '',
-                    icon = 'success',
-                    position = 'top-end',
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-heart icon' ></i>
+                            <span class="text nav-text">Likes</span>
+                        </a>
+                    </li>
 
-                } = c;
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-wallet icon' ></i>
+                            <span class="text nav-text">Wallets</span>
+                        </a>
+                    </li>
 
-                const Toast = Swal.mixin({
-                    toast: true,
-                    title: msg,
-                    position: position,
-                    icon: icon,
-                    showConfirmButton: false,
-                    timer: 3000,
-                    timerProgressBar: true,
-                    didOpen: (toast) => {
-                        toast.addEventListener('mouseenter', Swal.stopTimer)
-                        toast.addEventListener('mouseleave', Swal.resumeTimer)
-                    }
-                })
+                </ul>
+            </div>
 
-                Toast.fire({})
-            }
+            <div class="bottom-content">
+                <li class="">
+                    <a href="#">
+                        <i class='bx bx-log-out icon' ></i>
+                        <span class="text nav-text">Logout</span>
+                    </a>
+                </li>
 
-            let success = function (c) {
-                const {
-                    msg = "",
-                    title = "",
-                    footer = "",
-                } = c
+                <li class="mode">
+                    <div class="sun-moon">
+                        <i class='bx bx-moon icon moon'></i>
+                        <i class='bx bx-sun icon sun'></i>
+                    </div>
+                    <span class="mode-text text">Dark mode</span>
 
-                Swal.fire({
-                    icon: 'success',
-                    title: title,
-                    text: msg,
-                    footer: footer,
-                })
+                    <div class="toggle-switch">
+                        <span class="switch"></span>
+                    </div>
+                </li>
 
-            }
+            </div>
+        </div>
+    </nav>
 
-            let error = function (c) {
-                const {
-                    msg = "",
-                    title = "",
-                    footer = "",
-                } = c
+    <section class="home">
+        {{block "content" .}}{{end}}
+    </section>
 
-                Swal.fire({
-                    icon: 'error',
-                    title: title,
-                    text: msg,
-                    footer: footer,
-                })
-
-            }
-
-            async function custom(c) {
-                const {
-                    msg = "",
-                    title = "",
-                } = c;
-
-                const { value: result } = await Swal.fire({
-                    title: title,
-                    html: msg,
-                    backdrop: false,
-                    focusConfirm: false,
-                    showCancelButton: true,
-                    willOpen: () => {
-                        if (c.willOpen !== undefined) {
-                            c.willOpen();
-                        }
-                    },
-                    didOpen: () => {
-                        if (c.didOpen !== undefined){
-                            c.didOpen();
-                        }
-                    },
-                    preConfirm: () => {
-                        return [
-                            document.getElementById('start').value,
-                            document.getElementById('end').value
-                        ]
-                    }
-                })
-
-                if (result) {
-                    if (result.dismiss !== Swal.DismissReason.cancel) {
-                        if (result.value !== "") {
-                            if (c.callback !== undefined) {
-                                c.callback(result);
-                            }
-                        } else {
-                            c.callback(false);
-                        }
-                    } else {
-                        c.callback(false);
-                    }
-                }
-            }
-
-            return {
-                toast: toast,
-                success: success,
-                error: error,
-                custom: custom,
-            }
-        }
-
-    </script>
+    <script src="/static/js/script.js"></script>
 
     </body>
-
     </html>
 {{end}}
