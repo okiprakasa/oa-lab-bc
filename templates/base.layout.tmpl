@@ -22,7 +22,7 @@
             }
         </style>
 
-        <title>OA BLBC</title>
+        <title>e-BLBC</title>
     </head>
     <body>
     <nav class="sidebar close">
@@ -47,7 +47,7 @@
                 <li class="search-box">
                     <i class='bx bx-search icon'></i>
                     <label>
-                        <input type="text" placeholder="Search...">
+                        <input id="search-text" type="text">
                     </label>
                 </li>
 
@@ -99,16 +99,16 @@
 
             <div class="bottom-content">
                 <li class="">
-                    <a href="#">
+                    <a href="/login">
                         <i class='bx bx-log-out icon' ></i>
                         <span class="text nav-text">Logout</span>
                     </a>
                 </li>
 
                 <li class="mode">
-                    <div class="sun-moon">
-                        <i class='bx bx-moon icon moon'></i>
+                    <div class="sun-moon icon">
                         <i class='bx bx-sun icon sun'></i>
+                        <i class='bx bx-moon icon moon'></i>
                     </div>
                     <span class="mode-text text">Light</span>
 
@@ -126,7 +126,6 @@
     </section>
 
     <script src="/static/js/script.js"></script>
-
     </body>
     </html>
 {{end}}
