@@ -28,8 +28,8 @@ modeSwitch.addEventListener("click" , () =>{
     body.classList.toggle("dark");
     
     if(body.classList.contains("dark")){
-        modeText.innerText = "Dark";
+        modeText.innerText = "Night";
     }else{
-        modeText.innerText = "Light";
+        modeText.innerText = "Day";
     }
 });
