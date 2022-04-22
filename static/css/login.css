@@ -34,10 +34,10 @@ body.dark{
 }
 .login-box {
     position: absolute;
-    top: 45%;
+    top: 47%;
     left: 50%;
     width: 25em;
-    padding: 2.5em;
+    padding: 2.5em 2.5em 2.25em;
     transform: translate(-50%, -50%);
     background: var(--sidebar-color);
     box-sizing: border-box;
