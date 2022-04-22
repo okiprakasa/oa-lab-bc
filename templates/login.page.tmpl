@@ -47,6 +47,7 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.8/dist/sweetalert2.min.js"></script>
 <script>
     document.getElementById("loginButton").addEventListener("click", function () {
+        modeSave();
         const Toast = Swal.mixin({
             toast: true,
             position: 'top',
@@ -68,14 +69,33 @@
         })
     })
 
+    function modeSave() {
+        if (typeof(Storage) !== "undefined") {
+            if(body.classList.contains("dark")){
+                localStorage.setItem("oa-blbc-mode", "dark");
+            }else{
+                localStorage.setItem("oa-blbc-mode", "light");
+            }
+        }
+    }
+
     const body = document.querySelector('body');
-    let toggle = document.getElementById("toggly")
-    toggle.addEventListener("click", function () {
+    let modeSwitch = document.getElementById("toggly")
+    modeSwitch.addEventListener("click", function () {
         body.classList.toggle("dark");
+        modeSave();
     })
 
-    if (toggle.checked === true) {
-        body.classList.toggle("dark");
+    if (typeof(Storage) !== "undefined") {
+        if (localStorage.getItem("oa-blbc-mode")) {
+            modeSwitch.checked = localStorage.getItem("oa-blbc-mode") === "dark";
+        }
+    }
+
+    if (modeSwitch.checked === true) {
+        if (!body.classList.contains("dark")) {
+            body.classList.add("dark");
+        }
     }
 </script>
 </body>
