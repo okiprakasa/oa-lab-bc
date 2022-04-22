@@ -281,7 +281,7 @@ body.dark .switch::before{
 }
 .sidebar.close ~ .home{
     left: 4.875em;
-    height: 100vh;
+    height: 97vh;
     width: calc(100% - 4.875em);
 }
 body.dark .home .text{

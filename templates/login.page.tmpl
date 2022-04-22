@@ -43,13 +43,11 @@
             toast: true,
             position: 'top',
             showConfirmButton: false,
-            timer: 500,
-            timerProgressBar: true,
-            didOpen: (toast) => {
-                toast.addEventListener('mouseenter', Swal.stopTimer)
-                toast.addEventListener('mouseleave', Swal.resumeTimer)
+            timer: 1000,
+            timerProgressBar: false,
+            didOpen: () => {
                 setInterval(() => {
-                    if (parseInt(Swal.getTimerLeft()) <= 55) {
+                    if (parseInt(Swal.getTimerLeft()) <= 300) {
                         window.open("/home", "_self")
                     }
                 }, 50)
