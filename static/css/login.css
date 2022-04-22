@@ -26,18 +26,18 @@ body {
 }
 .login-box {
     position: absolute;
-    top: 50%;
+    top: 45%;
     left: 50%;
-    width: 400px;
-    padding: 40px;
+    width: 25em;
+    padding: 2.5em;
     transform: translate(-50%, -50%);
     background: var(--sidebar-color);
     box-sizing: border-box;
-    box-shadow: 0 15px 25px var(--text-color);
-    border-radius: 10px;
+    box-shadow: 0 0.9375em 1.5625em var(--text-color);
+    border-radius: 0.625em;
 }
 .login-box h2 {
-    margin: 0 0 50px;
+    margin: 0 0 3.125em;
     padding: 0;
     color: var(--text-color);
     text-align: center;
@@ -47,46 +47,46 @@ body {
 }
 .login-box .user-box input {
     width: 100%;
-    padding: 10px 0;
-    font-size: 16px;
+    padding: 0.625em 0;
+    font-size: 1em;
     color: var(--text-color);
-    margin-bottom: 30px;
+    margin-bottom: 1.875em;
     border: none;
     border-bottom: 1px solid var(--text-color);
     outline: none;
     background: transparent;
 }
 .pass{
-    margin-bottom: -30px;
+    margin-bottom: -1.875em;
 }
 .login-box .user-box label {
     position: absolute;
     top:0;
     left: 0;
-    padding: 10px 0;
-    font-size: 16px;
+    padding: 0.625em 0;
+    font-size: 1em;
     color: var(--text-color);
     pointer-events: none;
     transition: .5s;
 }
 .login-box .user-box input:focus ~ label,
 .login-box .user-box input:valid ~ label {
-    top: -20px;
+    top: -1.25em;
     left: 0;
     color: var(--primary-color);
-    font-size: 12px;
+    font-size: 0.75em;
 }
 .login-box form a {
     position: relative;
     display: inline-block;
-    padding: 10px 20px;
+    padding: 0.625em 1.25em;
     color: var(--primary-color);
-    font-size: 16px;
+    font-size: 1em;
     text-decoration: none;
     text-transform: uppercase;
     overflow: hidden;
     transition: .5s;
-    margin-top: 40px;
+    margin-top: 2.5em;
     letter-spacing: 4px
 }
 .login-box a:hover {
@@ -94,9 +94,9 @@ body {
     color: var(--text-color);
     border-radius: 5px;
     box-shadow: 0 0 5px var(--primary-color),
-    0 0 25px var(--primary-color),
-    0 0 50px var(--primary-color),
-    0 0 100px var(--primary-color);
+    0 0 1.5625em var(--primary-color),
+    0 0 3.125em var(--primary-color),
+    0 0 6.25em var(--primary-color);
 }
 .login-box a span {
     position: absolute;

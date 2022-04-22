@@ -1,5 +1,5 @@
 <!doctype html>
-<!--suppress HtmlFormInputWithoutLabel -->
+<!--suppress HtmlFormInputWithoutLabel, JSUnresolvedVariable -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>e-BLBC</title>
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10.15.5/dist/sweetalert2.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.8/dist/sweetalert2.min.css">
     <link rel="stylesheet" href="/static/css/login.css">
 
 </head>
@@ -24,16 +24,43 @@
             <input type="password" name="" required="">
             <label>Password</label>
         </div>
-        <a href="#">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            Login
-        </a>
+        <div id="loginButton">
+            <a href="#">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                Login
+            </a>
+        </div>
     </form>
 </div>
 
-<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.8/dist/sweetalert2.all.min.js"></script>
+<script>
+    document.getElementById("loginButton").addEventListener("click", function () {
+        const Toast = Swal.mixin({
+            toast: true,
+            position: 'top',
+            showConfirmButton: false,
+            timer: 500,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.addEventListener('mouseenter', Swal.stopTimer)
+                toast.addEventListener('mouseleave', Swal.resumeTimer)
+                setInterval(() => {
+                    if (parseInt(Swal.getTimerLeft()) <= 55) {
+                        window.open("/home", "_self")
+                    }
+                }, 50)
+            }
+        })
+
+        Toast.fire({
+            icon: "success",
+            title: "Signed in Successfully"
+        })
+    })
+</script>
 </body>
 </html>
