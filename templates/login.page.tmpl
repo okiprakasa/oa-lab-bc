@@ -24,19 +24,27 @@
             <input type="password" name="" required="">
             <label>Password</label>
         </div>
-        <div id="loginButton">
-            <a href="#">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                Login
-            </a>
+        <div class="row">
+            <div class="column" id="loginButton">
+                <a href="#">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    Login
+                </a>
+            </div>
+            <div class="the-amazing-toggle column">
+                <input class="ios-toggle" type="checkbox" id="toggly">
+                <label class="ios-label" for="toggly">
+                    <i></i>
+                </label>
+            </div>
         </div>
     </form>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.8/dist/sweetalert2.all.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.8/dist/sweetalert2.min.js"></script>
 <script>
     document.getElementById("loginButton").addEventListener("click", function () {
         const Toast = Swal.mixin({
@@ -59,6 +67,16 @@
             title: "Signed in Successfully"
         })
     })
+
+    const body = document.querySelector('body');
+    let toggle = document.getElementById("toggly")
+    toggle.addEventListener("click", function () {
+        body.classList.toggle("dark");
+    })
+
+    if (toggle.checked === true) {
+        body.classList.toggle("dark");
+    }
 </script>
 </body>
 </html>

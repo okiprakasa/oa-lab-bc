@@ -47,7 +47,7 @@ body.dark{
     top: 0;
     left: 0;
     height: 100%;
-    width: 13.75em;
+    width: 12.25em;
     padding: 0.625em 0.875em;
     background: var(--sidebar-color);
     transition: var(--tran-05);
@@ -265,9 +265,9 @@ body.dark .switch::before{
 .home{
     position: absolute;
     top: 0;
-    left: 13.75em;
+    left: 12.25em;
     height: 100vh;
-    width: calc(100% - 13.75em);
+    width: calc(100% - 12.25em);
     margin-top: 1em;
     margin-bottom: 1em;
     background-color: var(--body-color);
