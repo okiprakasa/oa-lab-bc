@@ -1,248 +1,223 @@
 /*noinspection CssUnknownTarget*/
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-html {
-    height: 100%;
-}
+html{height:100%;}
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Source Sans Pro', arial, sans-serif;
-}
-:root {
-    /* ===== Colors ===== */
-    --body-color: #F8F4ED;
-    --sidebar-color: #FFF;
-    --primary-color: #F2D143;
-    --primary-color-light: #F6F5FF;
-    --toggle-color: #DDD;
-    --text-color: #3C3F41;
-}
-body {
     margin:0;
     padding:0;
-    font-family: sans-serif;
-    background: var(--body-color);
+    box-sizing:border-box;
+    font-family:'Poppins',arial,sans-serif;
+}
+:root{
+    --body-color:#F8F4ED;
+    --sidebar-color:#FFF;
+    --primary-color:#F2D143;
+    --primary-color-light:#F6F5FF;
+    --toggle-color:#DDD;
+    --text-color:#3C3F41;
+}
+body{
+    margin:0;
+    padding:0;
+    font-family:sans-serif;
+    background:var(--body-color);
 }
 body.dark{
-    --body-color: #242526;
-    --sidebar-color: #242526;
-    --primary-color: #ccc;
-    --primary-color-light: #3a3b3c;
-    --toggle-color: #fff;
-    --text-color: #ccc;
+    --body-color:#242526;
+    --sidebar-color:#242526;
+    --primary-color:#ccc;
+    --primary-color-light:#3a3b3c;
+    --toggle-color:#fff;
+    --text-color:#ccc;
 }
-.login-box {
-    position: absolute;
-    top: 47%;
-    left: 50%;
-    width: 25em;
-    padding: 2.5em 2.5em 2.25em;
-    transform: translate(-50%, -50%);
-    background: var(--sidebar-color);
-    box-sizing: border-box;
-    box-shadow: 0.2em 0.2em 1.5em var(--text-color);
-    border-radius: 0.625em;
+.login-box{
+    position:absolute;
+    top:47%;
+    left:50%;
+    width:25em;
+    padding:2.5em 2.5em 2.25em;
+    transform:translate(-50%,-50%);
+    background:var(--sidebar-color);
+    box-sizing:border-box;
+    box-shadow:0.2em 0.2em 1.5em var(--text-color);
+    border-radius:0.625em;
 }
-.login-box h2 {
-    margin: 0 0 2.35em;
-    padding: 0;
-    color: var(--text-color);
-    text-align: center;
+.login-box h2{
+    margin:0 0 2.35em;
+    padding:0;
+    color:var(--text-color);
+    text-align:center;
 }
-.login-box .user-box {
-    position: relative;
+.login-box .user-box{position:relative;}
+.login-box .user-box input{
+    width:100%;
+    padding:0.625em 0;
+    font-size:1em;
+    color:var(--text-color);
+    margin-bottom:1.875em;
+    border:none;
+    border-bottom:1px solid var(--text-color);
+    outline:none;
+    background:transparent;
 }
-.login-box .user-box input {
-    width: 100%;
-    padding: 0.625em 0;
-    font-size: 1em;
-    color: var(--text-color);
-    margin-bottom: 1.875em;
-    border: none;
-    border-bottom: 1px solid var(--text-color);
-    outline: none;
-    background: transparent;
-}
-.pass{
-    margin-bottom: -1.875em;
-}
-.login-box .user-box label {
-    position: absolute;
+.pass{margin-bottom:-1.875em;}
+.login-box .user-box label{
+    position:absolute;
     top:0;
-    left: 0;
-    padding: 0.625em 0;
-    font-size: 1em;
-    color: var(--text-color);
-    pointer-events: none;
-    transition: .5s;
+    left:0;
+    padding:0.625em 0;
+    font-size:1em;
+    color:var(--text-color);
+    pointer-events:none;
+    transition:.5s;
 }
 .login-box .user-box input:focus ~ label,
-.login-box .user-box input:valid ~ label {
-    top: -1.25em;
-    left: 0;
-    color: var(--primary-color);
-    font-size: 0.75em;
+.login-box .user-box input:valid ~ label{
+    top:-1.25em;
+    left:0;
+    color:var(--primary-color);
+    font-size:0.75em;
 }
-.login-box form a {
-    position: relative;
-    display: inline-block;
-    padding: 0.625em 1.25em;
-    color: var(--primary-color);
-    font-size: 18px;
-    text-decoration: none;
-    text-transform: uppercase;
-    overflow: hidden;
-    transition: .5s;
-    margin-top: 2.5em;
-    letter-spacing: 4px
+.login-box form a{
+    position:relative;
+    display:inline-block;
+    padding:0.625em 1.25em;
+    color:var(--primary-color);
+    font-size:18px;
+    text-decoration:none;
+    text-transform:uppercase;
+    overflow:hidden;
+    transition:.5s;
+    margin-top:2.5em;
+    letter-spacing:4px
 }
-.login-box a:hover {
-    background: var(--primary-color);
-    color: var(--sidebar-color);
-    border-radius: 5px;
-    box-shadow: 0 0 5px var(--primary-color),
+.login-box a:hover{
+    background:var(--primary-color);
+    color:var(--sidebar-color);
+    border-radius:5px;
+    box-shadow:0 0 5px var(--primary-color),
     0 0 1.5625em var(--primary-color),
     0 0 3.125em var(--primary-color),
     0 0 6.25em var(--primary-color);
 }
-.login-box a span {
-    position: absolute;
-    display: block;
+.login-box a span{
+    position:absolute;
+    display:block;
 }
-.login-box a span:nth-child(1) {
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, var(--primary-color));
-    animation: btn-anim1 1s linear infinite;
+.login-box a span:nth-child(1){
+    top:0;
+    left:-100%;
+    width:100%;
+    height:2px;
+    background:linear-gradient(90deg,transparent,var(--primary-color));
+    animation:btn-anim1 1s linear infinite;
 }
-@keyframes btn-anim1 {
-    0% {
-        left: -100%;
+@keyframes btn-anim1{
+    0%{
+        left:-100%;
     }
-    50%,100% {
-        left: 100%;
-    }
-}
-.login-box a span:nth-child(2) {
-    top: -100%;
-    right: 0;
-    width: 2px;
-    height: 100%;
-    background: linear-gradient(180deg, transparent, var(--primary-color));
-    animation: btn-anim2 1s linear infinite;
-    animation-delay: .25s
-}
-@keyframes btn-anim2 {
-    0% {
-        top: -100%;
-    }
-    50%,100% {
-        top: 100%;
+    50%,100%{
+        left:100%;
     }
 }
-.login-box a span:nth-child(3) {
-    bottom: 0;
-    right: -100%;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(270deg, transparent, var(--primary-color));
-    animation: btn-anim3 1s linear infinite;
-    animation-delay: .5s
+.login-box a span:nth-child(2){
+    top:-100%;
+    right:0;
+    width:2px;
+    height:100%;
+    background:linear-gradient(180deg,transparent,var(--primary-color));
+    animation:btn-anim2 1s linear infinite;
+    animation-delay:.25s
 }
-@keyframes btn-anim3 {
-    0% {
-        right: -100%;
+@keyframes btn-anim2{
+    0%{
+        top:-100%;
     }
-    50%,100% {
-        right: 100%;
-    }
-}
-.login-box a span:nth-child(4) {
-    bottom: -100%;
-    left: 0;
-    width: 2px;
-    height: 100%;
-    background: linear-gradient(360deg, transparent, var(--primary-color));
-    animation: btn-anim4 1s linear infinite;
-    animation-delay: .75s
-}
-@keyframes btn-anim4 {
-    0% {
-        bottom: -100%;
-    }
-    50%,100% {
-        bottom: 100%;
+    50%,100%{
+        top:100%;
     }
 }
-.ios-label {
-    display: block;
-    width: 54px;
-    height: 32px;
-    margin-left: auto;
-    margin-right: 0;
-    border-radius: 100px;
-    transition: all 0.2s ease-in-out;
-    -webkit-transition: all 0.2s ease-in-out;
-    background-color: #F2D143;
+.login-box a span:nth-child(3){
+    bottom:0;
+    right:-100%;
+    width:100%;
+    height:2px;
+    background:linear-gradient(270deg,transparent,var(--primary-color));
+    animation:btn-anim3 1s linear infinite;
+    animation-delay:.5s
 }
-.ios-toggle {
-    display: none;
+@keyframes btn-anim3{
+    0%{
+        right:-100%;
+    }
+    50%,100%{
+        right:100%;
+    }
 }
-i {
-    height: 28px;
-    width: 28px;
-    background: #ffffff;
-    display: inline-block;
-    border-radius: 100px;
-    margin-top: 2px;
-    margin-left: 2px;
-    transition: all 0.2s ease-in-out;
-    -webkit-transition: all 0.2s ease-in-out;
-    pointer-events: none;
-    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+.login-box a span:nth-child(4){
+    bottom:-100%;
+    left:0;
+    width:2px;
+    height:100%;
+    background:linear-gradient(360deg,transparent,var(--primary-color));
+    animation:btn-anim4 1s linear infinite;
+    animation-delay:.75s
 }
-.ios-.ios-label:hover>i {
-    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.20);
-    transform: scale(1.01);
+@keyframes btn-anim4{
+    0%{
+        bottom:-100%;
+    }
+    50%,100%{
+        bottom:100%;
+    }
 }
-.ios-toggle:checked+label>i {
-    margin-left: 24px;
+.ios-label{
+    display:block;
+    width:54px;
+    height:32px;
+    margin-left:auto;
+    margin-right:0;
+    border-radius:100px;
+    transition:all 0.2s ease-in-out;
+    -webkit-transition:all 0.2s ease-in-out;
+    background-color:#F2D143;
 }
-.ios-label:active {
-    background-color: #F8F4ED;
+.ios-toggle{display:none;}
+i{
+    height:28px;
+    width:28px;
+    background:#ffffff;
+    display:inline-block;
+    border-radius:100px;
+    margin-top:2px;
+    margin-left:2px;
+    transition:all 0.2s ease-in-out;
+    -webkit-transition:all 0.2s ease-in-out;
+    pointer-events:none;
+    box-shadow:0 0 0 0 rgba(0,0,0,0);
 }
-.ios-label:active>i {
-    width: 34px;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.20);
+.ios-.ios-label:hover>i{
+    box-shadow:0 1px 2px 0 rgba(0,0,0,0.20);
+    transform:scale(1.01);
 }
-.ios-toggle:checked+.ios-label:active>i {
-    margin-left: 18px;
+.ios-toggle:checked+label>i{margin-left:24px;}
+.ios-label:active{background-color:#F8F4ED;}
+.ios-label:active>i{
+    width:34px;
+    box-shadow:0 2px 4px 0 rgba(0,0,0,0.20);
 }
-.ios-toggle:checked+label {
-    background-color: #18191a;
-}
-.row{
-    display: flex;
-}
-.column {
-    flex: 50%;
-}
+.ios-toggle:checked+.ios-label:active>i{margin-left:18px;}
+.ios-toggle:checked+label{background-color:#18191a;}
+.row{display:flex;}
+.column{flex:50%;}
 .the-amazing-toggle{
-    position: relative;
-    display: inline-block;
-    padding-top: 0.625em;
-    padding-bottom: 0.625em;
-    padding-left: 1.25em;
-    overflow: hidden;
-    margin-top: 2.5em;
+    position:relative;
+    display:inline-block;
+    padding-top:0.625em;
+    padding-bottom:0.625em;
+    padding-left:1.25em;
+    overflow:hidden;
+    margin-top:2.5em;
 }
 /* Hope you enjoy the toggle as much as I do! Follow me @danielhannih on Twitter! */
-.swal2-popup.swal2-toast {
-    background: var(--sidebar-color);
-}
-.swal2-popup {
-    color: var(--text-color);
-}
+.swal2-popup.swal2-toast{background:var(--sidebar-color);}
+.swal2-popup{color:var(--text-color);}

@@ -1,10 +1,6 @@
 /*noinspection CssUnknownTarget*/
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-@-moz-document url-prefix() { /* Disable scrollbar Firefox */
-    html{
-        scrollbar-width: none;
-    }
-}
+@-moz-document url-prefix() {html{scrollbar-width: none;}}
 *{
     margin: 0;
     padding: 0;
@@ -12,13 +8,12 @@
     font-family: 'Poppins', sans-serif;
 }
 :root{
-    /* ===== Colors ===== */
     --body-color: #F8F4ED;
     --sidebar-color: #FFF;
     --hover-color: #FFF;
     --primary-color: #F2D143;
     --primary-color-light: #F6F5FF;
-    --toggle-color: #DDD;
+    --toggle-color: #F2D143;
     --text-color: #707070;
     --left-size: 0.3125em;
     --opacity-sun: 1;
@@ -26,7 +21,6 @@
     --sidebar-width: 5.5em;
     --sidebar-text-opacity: 0;
     --toggle-rotation: rotate(0deg);
-    /* ====== Transition ====== */
     --tran-03: all 0.2s ease;
     --tran-04: all 0.3s ease;
     --tran-05: all 0.3s ease;
@@ -239,12 +233,18 @@ header .image-text .organization{
     position: absolute;
     top: 0;
     left: var(--sidebar-width);
-    height: 99vh;
+    height: 95vh;
     width: calc(100% - var(--sidebar-width));
     margin-top: 1em;
     margin-bottom: 1em;
     background-color: var(--body-color);
     transition: var(--tran-05);
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    overflow-y: scroll;
+}
+.home::-webkit-scrollbar {
+    display: none;
 }
 .home .text{
     font-size: 1.5em;

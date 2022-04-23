@@ -26,7 +26,7 @@ modeSwitch.addEventListener("click",()=>{
         r.style.setProperty('--hover-color','#FFF');
         r.style.setProperty('--primary-color','#F2D143');
         r.style.setProperty('--primary-color-light','#F6F5FF');
-        r.style.setProperty('--toggle-color','#DDD');
+        r.style.setProperty('--toggle-color','#F2D143');
         r.style.setProperty('--text-color','#707070');
         r.style.setProperty('--left-size','0.3125em');
         r.style.setProperty('--opacity-sun','1');
