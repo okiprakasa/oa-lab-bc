@@ -1,59 +1,57 @@
-const body = document.querySelector('body'),
-    sidebar = body.querySelector('nav'),
-    toggle = body.querySelector(".toggle"),
-    modeSwitch = body.querySelector(".toggle-switch"),
-    searchText = document.getElementById("search-text"),
-    modeText = body.querySelector(".mode-text");
-console.log(localStorage.getItem("oa-blbc-sidebar"))
-toggle.addEventListener("click" , () =>{
-    sidebar.classList.toggle("close");
-    if (sidebar.classList.contains("close")) {
-        localStorage.setItem("oa-blbc-sidebar","close")
-        console.log(localStorage.getItem("oa-blbc-sidebar"))
-    } else {
-        localStorage.setItem("oa-blbc-sidebar","open")
-        console.log(localStorage.getItem("oa-blbc-sidebar"))
-    }
-    if (searchText.placeholder === "") {
-        searchText.placeholder = "Search...";
-    } else {
-        searchText.placeholder = "";
+const body=document.querySelector('body'),
+    toggle=body.querySelector(".toggle"),
+    modeSwitch=body.querySelector(".toggle-switch"),
+    searchText=document.getElementById("search-text"),
+    modeText=body.querySelector(".mode-text");
+toggle.addEventListener("click",()=>{
+    if(localStorage.getItem("oa-blbc-sidebar")==="close"){
+        localStorage.setItem("oa-blbc-sidebar","open");
+        r.style.setProperty('--sidebar-width','12.25em');
+        r.style.setProperty('--sidebar-text-opacity','1');
+        r.style.setProperty('--toggle-rotation','rotate(180deg)');
+        searchText.placeholder="Search...";
+    }else{
+        localStorage.setItem("oa-blbc-sidebar","close");
+        r.style.setProperty('--sidebar-width','5.5em');
+        r.style.setProperty('--sidebar-text-opacity','0');
+        r.style.setProperty('--toggle-rotation','rotate(0deg)');
+        searchText.placeholder="";
     }
 })
-modeSwitch.addEventListener("click" , () =>{
-    body.classList.toggle("dark");
-    if(body.classList.contains("dark")){
-        localStorage.setItem("oa-blbc-mode", "dark");
-        modeText.innerText = "Night";
+modeSwitch.addEventListener("click",()=>{
+    if(localStorage.getItem("oa-blbc-mode")==="dark"){
+        localStorage.setItem("oa-blbc-mode","light");
+        r.style.setProperty('--body-color','#F8F4ED');
+        r.style.setProperty('--sidebar-color','#FFF');
+        r.style.setProperty('--hover-color','#FFF');
+        r.style.setProperty('--primary-color','#F2D143');
+        r.style.setProperty('--primary-color-light','#F6F5FF');
+        r.style.setProperty('--toggle-color','#DDD');
+        r.style.setProperty('--text-color','#707070');
+        r.style.setProperty('--left-size','0.3125em');
+        r.style.setProperty('--opacity-sun','1');
+        r.style.setProperty('--opacity-moon','0');
+        modeText.innerText="Day";
     }else{
-        localStorage.setItem("oa-blbc-mode", "");
-        modeText.innerText = "Day";
+        localStorage.setItem("oa-blbc-mode","dark");
+        r.style.setProperty('--body-color','#18191a');
+        r.style.setProperty('--sidebar-color','#242526');
+        r.style.setProperty('--hover-color','#ccc');
+        r.style.setProperty('--primary-color','#3a3b3c');
+        r.style.setProperty('--primary-color-light','#3a3b3c');
+        r.style.setProperty('--toggle-color','#fff');
+        r.style.setProperty('--text-color','#ccc');
+        r.style.setProperty('--left-size','1.25em');
+        r.style.setProperty('--opacity-sun','0');
+        r.style.setProperty('--opacity-moon','1');
+        modeText.innerText="Night";
     }
 });
-
-if (typeof(Storage) !== "undefined") {
-    if (localStorage.getItem("oa-blbc-mode") === "dark") {
-        if (!body.classList.contains("dark")) {
-            body.classList.add("dark");
-            body.querySelector(".switch").setAttribute("left", "1.25em");
-            modeText.innerText = "Night";
-        }
-    } else {
-        if (body.classList.contains("dark")) {
-            body.classList.remove("dark");
-            body.querySelector(".switch").setAttribute("left", "0.3125em");
-            modeText.innerText = "Day";
-        }
+if(typeof(Storage)!=="undefined"){
+    if(localStorage.getItem("oa-blbc-mode")==="dark"){
+        modeText.innerText="Night";
     }
-    if (localStorage.getItem("oa-blbc-sidebar")) {
-        if (localStorage.getItem("oa-blbc-sidebar") === "open") {
-            if (sidebar.classList.contains("close")) {
-                sidebar.classList.remove("close")
-            }
-        } else {
-            if (!sidebar.classList.contains("close")) {
-                sidebar.classList.add("close")
-            }
-        }
+    if(sidebarMode==="open"){
+        searchText.placeholder="Search...";
     }
 }

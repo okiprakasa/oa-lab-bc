@@ -15,11 +15,17 @@
     /* ===== Colors ===== */
     --body-color: #F8F4ED;
     --sidebar-color: #FFF;
+    --hover-color: #FFF;
     --primary-color: #F2D143;
     --primary-color-light: #F6F5FF;
     --toggle-color: #DDD;
     --text-color: #707070;
-
+    --left-size: 0.3125em;
+    --opacity-sun: 1;
+    --opacity-moon: 0;
+    --sidebar-width: 5.5em;
+    --sidebar-text-opacity: 0;
+    --toggle-rotation: rotate(0deg);
     /* ====== Transition ====== */
     --tran-03: all 0.2s ease;
     --tran-04: all 0.3s ease;
@@ -34,27 +40,16 @@ body{
     background-color: var(--primary-color);
     color: #fff;
 }
-body.dark{
-    --body-color: #18191a;
-    --sidebar-color: #242526;
-    --primary-color: #3a3b3c;
-    --primary-color-light: #3a3b3c;
-    --toggle-color: #fff;
-    --text-color: #ccc;
-}
 .sidebar{
     position: fixed;
     top: 0;
     left: 0;
     height: 100%;
-    width: 12.25em;
+    width: var(--sidebar-width);
     padding: 0.625em 0.875em;
     background: var(--sidebar-color);
     transition: var(--tran-05);
     z-index: 100;
-}
-.sidebar.close{
-    width: 5.5em;
 }
 .sidebar li{
     height: 3.125em;
@@ -86,10 +81,7 @@ body.dark{
     font-size: 1em;
     font-weight: 500;
     white-space: nowrap;
-    opacity: 1;
-}
-.sidebar.close .text{
-    opacity: 0;
+    opacity: var(--sidebar-text-opacity);
 }
 .sidebar header{
     position: relative;
@@ -125,11 +117,11 @@ header .image-text .organization{
     position: absolute;
     top: 50%;
     right: -1.5625em;
-    transform: translateY(-50%) rotate(180deg);
+    transform: translateY(-50%) var(--toggle-rotation);
     height: 1.5625em;
     width: 1.5625em;
     background-color: var(--primary-color);
-    color: var(--sidebar-color);
+    color: var(--hover-color);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -137,12 +129,6 @@ header .image-text .organization{
     font-size: 1.075em;
     cursor: pointer;
     transition: var(--tran-05);
-}
-body.dark .sidebar header .toggle{
-    color: var(--text-color);
-}
-.sidebar.close .toggle{
-    transform: translateY(-50%) rotate(0deg);
 }
 .sidebar .menu{
     margin-top: 2.5em;
@@ -183,10 +169,6 @@ body.dark .sidebar header .toggle{
 .sidebar li a:hover .text{
     color: var(--sidebar-color);
 }
-body.dark .sidebar li a:hover .icon,
-body.dark .sidebar li a:hover .text{
-    color: var(--text-color);
-}
 .sidebar .menu-bar{
     height: calc(100% - 3.4375em);
     display: flex;
@@ -217,16 +199,10 @@ body.dark .sidebar li a:hover .text{
     position: absolute;
 }
 .mode .sun-moon i.sun{
-    opacity: 1;
+    opacity: var(--opacity-sun);
 }
 .mode .sun-moon i.moon{
-    opacity: 0;
-}
-body.dark .mode .sun-moon i.sun{
-    opacity: 0;
-}
-body.dark .mode .sun-moon i.moon{
-    opacity: 1;
+    opacity: var(--opacity-moon);
 }
 .menu-bar .bottom-content .toggle-switch{
     position: absolute;
@@ -254,20 +230,17 @@ body.dark .mode .sun-moon i.moon{
     width: 0.9375em;
     border-radius: 50%;
     top: 50%;
-    left: 0.3125em;
+    left: var(--left-size);
     transform: translateY(-50%);
     background-color: var(--sidebar-color);
     transition: var(--tran-04);
 }
-body.dark .switch::before{
-    left: 1.25em;
-}
 .home{
     position: absolute;
     top: 0;
-    left: 12.25em;
-    height: 98.5vh;
-    width: calc(100% - 12.25em);
+    left: var(--sidebar-width);
+    height: 99vh;
+    width: calc(100% - var(--sidebar-width));
     margin-top: 1em;
     margin-bottom: 1em;
     background-color: var(--body-color);
@@ -278,14 +251,6 @@ body.dark .switch::before{
     font-weight: 500;
     color: var(--text-color);
     padding: 0.75em 3.75em;
-}
-.sidebar.close ~ .home{
-    left: 4.875em;
-    height: 97vh;
-    width: calc(100% - 4.875em);
-}
-body.dark .home .text{
-    color: var(--text-color);
 }
 .home .para-text{
     color: var(--text-color);
