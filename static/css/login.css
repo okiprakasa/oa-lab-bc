@@ -14,12 +14,14 @@ html{height:100%;}
     --primary-color-light:#F6F5FF;
     --toggle-color:#DDD;
     --text-color:#3C3F41;
+    --font-size:2rem;
 }
 body{
     margin:0;
     padding:0;
     font-family:sans-serif;
     background:var(--body-color);
+    display: flex;
 }
 body.dark{
     --body-color:#242526;
@@ -31,11 +33,11 @@ body.dark{
 }
 .login-box{
     position:absolute;
-    top:47%;
-    left:50%;
+    top:49%;
+    right: 7.5%;
     width:25em;
     padding:2.5em 2.5em 2.25em;
-    transform:translate(-50%,-50%);
+    transform:translate(0%,-50%);
     background:var(--sidebar-color);
     box-sizing:border-box;
     box-shadow:0.2em 0.2em 1.5em var(--text-color);
@@ -221,3 +223,41 @@ i{
 /* Hope you enjoy the toggle as much as I do! Follow me @danielhannih on Twitter! */
 .swal2-popup.swal2-toast{background:var(--sidebar-color);}
 .swal2-popup{color:var(--text-color);}
+.quote-box{
+    position:absolute;
+    top:49%;
+    left:3.5%;
+    width:calc(80% - 25em);
+    transform:translate(0%,-50%);
+}
+blockquote{font-size: var(--font-size);}
+cite{
+    display: block;
+    text-align: right;
+    font-family: Poppins, Arial, sans-serif;
+    margin-top: 0.65rem;
+    margin-right: 2rem;
+    font-size: 1rem;
+    color: var(--text-color);
+    font-style: normal;
+}
+blockquote q{
+    font-family: Georgia, serif;
+    font-style: italic;
+    letter-spacing: 0.1rem;
+}
+blockquote q span{
+    color: var(--text-color);
+    will-change: opacity, filter;
+    opacity: 0;
+    filter: blur(0px);
+}
+q{quotes: "“" "”" "‘" "’";}
+q:before{
+    content: open-quote;
+}
+q:after{content: close-quote;}
+q:before, q:after{
+    color: var(--text-color);
+    font-size: var(--font-size);
+}

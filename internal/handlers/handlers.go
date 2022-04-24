@@ -7,6 +7,7 @@ import (
 	"github.com/okiprakasa/oa-lab-bc/internal/forms"
 	"github.com/okiprakasa/oa-lab-bc/internal/models"
 	"github.com/okiprakasa/oa-lab-bc/internal/render"
+	"github.com/okiprakasa/oa-lab-bc/internal/scraper"
 	"log"
 	"net/http"
 )
@@ -110,43 +111,11 @@ func (m *Repository) Majors(w http.ResponseWriter, r *http.Request) {
 
 // Login renders the room page
 func (m *Repository) Login(w http.ResponseWriter, r *http.Request) {
-	var emptyLogin models.Login
-	data := make(map[string]interface{})
-	data["reservation"] = emptyLogin
-
+	quote, author := scraper.QuoteScraper()
 	render.Template(w, r, "login.page.tmpl", &models.TemplateData{
-		Form: forms.New(nil),
-		Data: data,
+		Quote:  quote,
+		Author: author,
 	})
-}
-
-// PostLogin handles the posting of a reservation form
-func (m *Repository) PostLogin(w http.ResponseWriter, r *http.Request) {
-	err := r.ParseForm()
-	if err != nil {
-		log.Println(err)
-		return
-	}
-
-	login := models.Login{
-		UserName: r.Form.Get("username"),
-		Password: r.Form.Get("password"),
-	}
-
-	form := forms.New(r.PostForm)
-
-	form.Required("username", "password")
-	form.MinLength("username", 3, r)
-
-	if !form.Valid() {
-		data := make(map[string]interface{})
-		data["reservation"] = login
-		render.Template(w, r, "login.page.tmpl", &models.TemplateData{
-			Form: form,
-			Data: data,
-		})
-		return
-	}
 }
 
 // Availability renders the search availability page
