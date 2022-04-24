@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"github.com/okiprakasa/oa-lab-bc/internal/config"
+	"github.com/okiprakasa/oa-lab-bc/internal/forms"
 	"github.com/okiprakasa/oa-lab-bc/internal/models"
 	"github.com/okiprakasa/oa-lab-bc/internal/render"
 	"log"
@@ -55,7 +56,46 @@ func (m *Repository) About(w http.ResponseWriter, r *http.Request) {
 
 // Reservation renders the make a reservation page and displays form
 func (m *Repository) Reservation(w http.ResponseWriter, r *http.Request) {
-	render.Template(w, r, "make-reservation.page.tmpl", &models.TemplateData{})
+	var emptyReservation models.Reservation
+	data := make(map[string]interface{})
+	data["reservation"] = emptyReservation
+
+	render.Template(w, r, "make-reservation.page.tmpl", &models.TemplateData{
+		Form: forms.New(nil),
+		Data: data,
+	})
+}
+
+// PostReservation handles the posting of a reservation form
+func (m *Repository) PostReservation(w http.ResponseWriter, r *http.Request) {
+	err := r.ParseForm()
+	if err != nil {
+		log.Println(err)
+		return
+	}
+
+	reservation := models.Reservation{
+		FirstName: r.Form.Get("first_name"),
+		LastName:  r.Form.Get("last_name"),
+		Email:     r.Form.Get("email"),
+		Phone:     r.Form.Get("phone"),
+	}
+
+	form := forms.New(r.PostForm)
+
+	form.Required("first_name", "last_name", "email")
+	form.MinLength("first_name", 3, r)
+	form.IsEmail("email")
+
+	if !form.Valid() {
+		data := make(map[string]interface{})
+		data["reservation"] = reservation
+		render.Template(w, r, "make-reservation.page.tmpl", &models.TemplateData{
+			Form: form,
+			Data: data,
+		})
+		return
+	}
 }
 
 // Generals renders the room page
@@ -70,7 +110,43 @@ func (m *Repository) Majors(w http.ResponseWriter, r *http.Request) {
 
 // Login renders the room page
 func (m *Repository) Login(w http.ResponseWriter, r *http.Request) {
-	render.Template(w, r, "login.page.tmpl", &models.TemplateData{})
+	var emptyLogin models.Login
+	data := make(map[string]interface{})
+	data["reservation"] = emptyLogin
+
+	render.Template(w, r, "login.page.tmpl", &models.TemplateData{
+		Form: forms.New(nil),
+		Data: data,
+	})
+}
+
+// PostLogin handles the posting of a reservation form
+func (m *Repository) PostLogin(w http.ResponseWriter, r *http.Request) {
+	err := r.ParseForm()
+	if err != nil {
+		log.Println(err)
+		return
+	}
+
+	login := models.Login{
+		UserName: r.Form.Get("username"),
+		Password: r.Form.Get("password"),
+	}
+
+	form := forms.New(r.PostForm)
+
+	form.Required("username", "password")
+	form.MinLength("username", 3, r)
+
+	if !form.Valid() {
+		data := make(map[string]interface{})
+		data["reservation"] = login
+		render.Template(w, r, "login.page.tmpl", &models.TemplateData{
+			Form: form,
+			Data: data,
+		})
+		return
+	}
 }
 
 // Availability renders the search availability page

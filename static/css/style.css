@@ -235,8 +235,9 @@ header .image-text .organization{
     left: var(--sidebar-width);
     height: 95vh;
     width: calc(100% - var(--sidebar-width));
-    margin-top: 1em;
-    margin-bottom: 1em;
+    margin-right: 3em;
+    margin-top: 2em;
+    margin-bottom: 2em;
     background-color: var(--body-color);
     transition: var(--tran-05);
     -ms-overflow-style: none;
