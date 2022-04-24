@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"github.com/alexedwards/scs/v2"
 	"github.com/okiprakasa/oa-lab-bc/internal/config"
 	"github.com/okiprakasa/oa-lab-bc/internal/handlers"
@@ -42,8 +41,6 @@ func main() {
 	handlers.NewHandlers(repo)
 
 	render.NewTemplates(&app)
-
-	fmt.Println(fmt.Sprintf("Staring application on port %s", portNumber))
 
 	srv := &http.Server{
 		Addr:    portNumber,
