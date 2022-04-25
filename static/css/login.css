@@ -233,10 +233,9 @@ i{
 blockquote{font-size: var(--font-size);}
 cite{
     display: block;
-    text-align: right;
+    text-align: left;
     font-family: Poppins, Arial, sans-serif;
     margin-top: 0.65rem;
-    margin-right: 2rem;
     font-size: 1rem;
     color: var(--text-color);
     font-style: normal;
