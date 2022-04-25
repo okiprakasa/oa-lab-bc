@@ -28,8 +28,8 @@ function fadeWords(quotewords) {
           filter: "blur(0px)"
         }],
         {
-          duration: 1000,
-          delay: getRandom(500,3300),
+          duration: 750,
+          delay: getRandom(300,1750),
           fill: 'forwards'
         }
     );
