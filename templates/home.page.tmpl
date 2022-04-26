@@ -1,26 +1,153 @@
 {{ template "base" .}}
-
+<!--suppress HtmlFormInputWithoutLabel -->
+{{define "css"}}
+<link rel="stylesheet" href="/static/css/form.css">
+{{end}}
 {{define "content"}}
 <div class="container">
-    <div class="row">
-        <div class="col-md-6">
-            <form>
-                <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Email address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    <header>Data Surat Aju</header>
+
+    <form action="#">
+        <div class="form first">
+            <div>
+                <span class="title">Agenda</span>
+                <div class="fields">
+                    <div class="input-field">
+                        <label>Nomor Agenda</label>
+                        <input type="text" placeholder="Masukkan Nomor Agenda" required>
+                    </div>
+
+                    <div class="input-field">
+                        <label>Waktu Masuk</label>
+                        <input type="datetime-local" required>
+                    </div>
+
+                    <div class="input-field">
+                        <label>Kantor Asal</label>
+                        <input type="text" placeholder="Masukkan Kantor Asal" required>
+                    </div>
+
+                    <div class="input-field">
+                        <label>Gender</label>
+                        <select required>
+                            <option disabled selected>Select gender</option>
+                            <option>Male</option>
+                            <option>Female</option>
+                            <option>Others</option>
+                        </select>
+                    </div>
                 </div>
-                <div class="mb-3">
-                    <label for="exampleInputPassword1" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1">
+            </div>
+
+            <div class="details ID">
+                <span class="title">Identity Details</span>
+
+                <div class="fields">
+                    <div class="input-field">
+                        <label>ID Type</label>
+                        <input type="text" placeholder="Enter ID type" required>
+                    </div>
+
+                    <div class="input-field">
+                        <label>ID Number</label>
+                        <input type="number" placeholder="Enter ID number" required>
+                    </div>
+
                 </div>
-                <div class="mb-3 form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
+
+                <button class="nextBtn">
+                    <span class="btnText">Next</span>
+                    <i class="uil uil-navigator"></i>
+                </button>
+            </div>
         </div>
-    </div>
+
+        <div class="form second">
+            <div class="details address">
+                <span class="title">Address Details</span>
+
+                <div class="fields">
+                    <div class="input-field">
+                        <label>Address Type</label>
+                        <input type="text" placeholder="Permanent or Temporary" required>
+                    </div>
+
+                    <div class="input-field">
+                        <label>Nationality</label>
+                        <input type="text" placeholder="Enter nationality" required>
+                    </div>
+
+                    <div class="input-field">
+                        <label>State</label>
+                        <input type="text" placeholder="Enter your state" required>
+                    </div>
+
+                    <div class="input-field">
+                        <label>District</label>
+                        <input type="text" placeholder="Enter your district" required>
+                    </div>
+
+                    <div class="input-field">
+                        <label>Block Number</label>
+                        <input type="number" placeholder="Enter block number" required>
+                    </div>
+
+                    <div class="input-field">
+                        <label>Ward Number</label>
+                        <input type="number" placeholder="Enter ward number" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="details family">
+                <span class="title">Family Details</span>
+
+                <div class="fields">
+                    <div class="input-field">
+                        <label>Father Name</label>
+                        <input type="text" placeholder="Enter father name" required>
+                    </div>
+
+                    <div class="input-field">
+                        <label>Mother Name</label>
+                        <input type="text" placeholder="Enter mother name" required>
+                    </div>
+
+                    <div class="input-field">
+                        <label>Grandfather</label>
+                        <input type="text" placeholder="Enter grandfather name" required>
+                    </div>
+
+                    <div class="input-field">
+                        <label>Spouse Name</label>
+                        <input type="text" placeholder="Enter spouse name" required>
+                    </div>
+
+                    <div class="input-field">
+                        <label>Father in Law</label>
+                        <input type="text" placeholder="Father in law name" required>
+                    </div>
+
+                    <div class="input-field">
+                        <label>Mother in Law</label>
+                        <input type="text" placeholder="Mother in law name" required>
+                    </div>
+                </div>
+
+                <div class="buttons">
+                    <div class="backBtn">
+                        <i class="uil uil-navigator"></i>
+                        <span class="btnText">Back</span>
+                    </div>
+
+                    <button class="submit">
+                        <span class="btnText">Submit</span>
+                        <i class="uil uil-navigator"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>
 </div>
 {{end}}
+{{define "js"}}<script src="/static/js/form.js"></script>{{end}}

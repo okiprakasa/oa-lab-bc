@@ -27,7 +27,9 @@ modeSwitch.addEventListener("click",()=>{
         r.style.setProperty('--primary-color','#F2D143');
         r.style.setProperty('--primary-color-light','#F6F5FF');
         r.style.setProperty('--toggle-color','#F2D143');
-        r.style.setProperty('--text-color','#707070');
+        r.style.setProperty('--text-color','#2e2e2e');
+        r.style.setProperty('--text-light-color','#333');
+        r.style.setProperty('--button-color','#2e2e2e');
         r.style.setProperty('--left-size','0.3125em');
         r.style.setProperty('--opacity-sun','1');
         r.style.setProperty('--opacity-moon','0');
@@ -41,6 +43,8 @@ modeSwitch.addEventListener("click",()=>{
         r.style.setProperty('--primary-color-light','#3a3b3c');
         r.style.setProperty('--toggle-color','#fff');
         r.style.setProperty('--text-color','#ccc');
+        r.style.setProperty('--text-light-color','#fff');
+        r.style.setProperty('--button-color','#e8d588');
         r.style.setProperty('--left-size','1.25em');
         r.style.setProperty('--opacity-sun','0');
         r.style.setProperty('--opacity-moon','1');

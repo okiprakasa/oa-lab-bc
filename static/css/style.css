@@ -12,9 +12,10 @@
     --sidebar-color: #FFF;
     --hover-color: #FFF;
     --primary-color: #F2D143;
-    --primary-color-light: #F6F5FF;
     --toggle-color: #F2D143;
-    --text-color: #707070;
+    --text-color: #2e2e2e;
+    --text-light-color: #333;
+    --button-color: #2e2e2e;
     --left-size: 0.3125em;
     --opacity-sun: 1;
     --opacity-moon: 0;
@@ -29,6 +30,9 @@ body{
     min-height: 100vh;
     background-color: var(--body-color);
     transition: var(--tran-05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 ::selection{
     background-color: var(--primary-color);
@@ -233,12 +237,12 @@ header .image-text .organization{
     position: absolute;
     top: 0;
     left: var(--sidebar-width);
-    height: 95vh;
+    height: 100vh;
     width: calc(100% - var(--sidebar-width));
-    margin-right: 3em;
-    margin-top: 2em;
-    margin-bottom: 2em;
+    margin: auto;
     background-color: var(--body-color);
+    align-items: center;
+    justify-content: center;
     transition: var(--tran-05);
     -ms-overflow-style: none;
     scrollbar-width: none;
