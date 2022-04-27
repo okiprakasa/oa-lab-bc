@@ -2,10 +2,12 @@
 .container{
     position: relative;
     align-self: center;
-    max-width: 900px;
-    width: 100%;
+    width: 60%;
+    max-width: 56em;
+    min-width: 38em;
+    height: auto;
     border-radius: 6px;
-    padding: 30px;
+    padding: 1.6875em 2.25em 1.5em 2.1em;
     margin: auto;
     background-color: var(--sidebar-color);
     box-shadow: 0.3em 0.3em 1em var(--text-color);
@@ -15,7 +17,7 @@
 }
 .container header{
     position: relative;
-    font-size: 20px;
+    font-size: 1.25em;
     font-weight: 600;
     color: var(--text-light-color);
 }
@@ -25,25 +27,28 @@
     left: 0;
     bottom: -2px;
     height: 3px;
-    width: 27px;
+    width: 1.6875em;
     border-radius: 8px;
     background-color: #F2D143;
 }
 .container form{
     position: relative;
-    margin-top: 16px;
-    min-height: 490px;
+    margin-top: 0.5em;
+    min-height: 26.75em;
+    width: 100%;
     background-color: var(--sidebar-color);
     overflow: hidden;
 }
 .container form .form{
     position: absolute;
     background-color: var(--sidebar-color);
+    width: 100%;
     transition: 0.3s ease;
 }
 .container form .form.second{
     opacity: 0;
     pointer-events: none;
+    width: 100%;
     transform: translateX(100%);
 }
 form.secActive .form.second{
@@ -58,38 +63,57 @@ form.secActive .form.first{
 }
 .container form .title{
     display: block;
-    font-size: 16px;
-    font-weight: 500;
-    margin: 6px 0;
+    font-size: 1em;
+    font-weight: 600;
+    margin-top: 0.875em;
+    margin-bottom: 3px;
     color: var(--text-light-color);
 }
 .container form .fields{
     display: flex;
-    align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
 }
+.container form .fields.sampel{
+    height: 18em;
+    width: 97%;
+    overflow: auto;
+    margin: 0;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
 form .fields .input-field{
     display: flex;
-    width: calc(100% / 2 - 15px);
+    width: calc(50% - 0.875em);
     flex-direction: column;
     margin: 4px 0;
 }
+form .fields .no-sampel{
+    width: calc(23% - 1em);
+}
+form .fields .nama-sampel{
+    width: calc(77%);
+}
 .input-field label{
-    font-size: 12px;
-    font-weight: 500;
+    font-size: 0.8em;
+    font-weight: 400;
     color: var(--text-color);
 }
 .input-field input, select{
     outline: none;
-    font-size: 14px;
+    font-size: 0.8em;
     font-weight: 400;
     color: #2d2d2d;
     border-radius: 5px;
     border: 1px solid #aaa;
-    padding: 0 15px;
-    height: 42px;
-    margin: 8px 0;
+    height: 2.625em;
+    margin: 4px 0;
+}
+.input-field input{
+    padding: 0 0.6875em;
+}
+select{
+    padding: 0 0.4em;
 }
 .input-field input :focus,
 .input-field select:focus{
@@ -97,33 +121,32 @@ form .fields .input-field{
 }
 .input-field select,
 .input-field input[type="date"]{
-    color: var(--text-color);
+    color: #2d2d2d;
     background-color: #fff;
 }
 .input-field input[type="date"]:valid{
-    color: var(--text-color);
+    color: #2d2d2d;
 }
 .container form button, .backBtn{
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 45px;
-    max-width: 200px;
-    width: 100%;
+    height: 2.5em;
+    width: 11em;
     border: none;
     outline: none;
     color: var(--sidebar-color);
     border-radius: 5px;
-    margin: 25px 0;
+    margin-top: 1em;
     background-color: var(--button-color);
     transition: all 0.3s linear;
     cursor: pointer;
 }
 .container form .btnText{
-    font-size: 14px;
+    font-size: 0.875em;
     font-weight: 400;
 }
-form button:hover{
+form button:hover, .backBtn:hover{
     background-color: #F2D143;
 }
 form button i,
@@ -138,11 +161,29 @@ form .buttons{
     align-items: center;
 }
 form .buttons button , .backBtn{
-    margin-right: 14px;
+    margin-right: 0.875em;
+}
+#side-by-side{
+    display: inline-block;
+    margin-right: 0.5em;
+    margin-bottom: 1em;
+}
+#jumlah-sampel{
+    width: 4.6875em;
+    padding: 0.1em 0.6875em;
+}
+#nama-sampel, #no-sampel{
+    text-align: center;
+    margin-bottom: -5px;
+}
+#nama-sampel{
+    padding-right: 2em;
+}
+#no-sampel{
+    padding-right: 0.75em;
 }
 
-
-@media (max-width: 750px) {
+@media (max-width: 46.875em) {
     .container form{
         overflow-y: scroll;
     }
@@ -150,11 +191,17 @@ form .buttons button , .backBtn{
        display: none;
     }
     form .fields .input-field{
-        width: calc(100% / 2 - 15px);
+        width: calc(50% - 0.875em);
+    }
+    form .fields .no-sampel{
+        width: calc(23% - 0.875em);
+    }
+    form .fields .nama-sampel{
+        width: calc(77% - 0.875em);
     }
 }
 
-@media (max-width: 550px) {
+@media (max-width: 34.375em) {
     form .fields .input-field{
         width: 100%;
     }

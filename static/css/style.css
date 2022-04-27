@@ -10,6 +10,7 @@
 :root{
     --body-color: #F8F4ED;
     --sidebar-color: #FFF;
+    --sidebar-text-color: #707070;
     --hover-color: #FFF;
     --primary-color: #F2D143;
     --toggle-color: #F2D143;
@@ -72,7 +73,7 @@ body{
 }
 .sidebar .text,
 .sidebar .icon{
-    color: var(--text-color);
+    color: var(--sidebar-text-color);
     transition: var(--tran-03);
 }
 .sidebar .text{

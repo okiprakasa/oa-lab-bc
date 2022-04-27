@@ -23,6 +23,7 @@ modeSwitch.addEventListener("click",()=>{
         localStorage.setItem("oa-blbc-mode","light");
         r.style.setProperty('--body-color','#F8F4ED');
         r.style.setProperty('--sidebar-color','#FFF');
+        r.style.setProperty('--sidebar-text-color','#707070');
         r.style.setProperty('--hover-color','#FFF');
         r.style.setProperty('--primary-color','#F2D143');
         r.style.setProperty('--primary-color-light','#F6F5FF');
@@ -38,6 +39,7 @@ modeSwitch.addEventListener("click",()=>{
         localStorage.setItem("oa-blbc-mode","dark");
         r.style.setProperty('--body-color','#18191a');
         r.style.setProperty('--sidebar-color','#242526');
+        r.style.setProperty('--sidebar-text-color','#ccc');
         r.style.setProperty('--hover-color','#ccc');
         r.style.setProperty('--primary-color','#3a3b3c');
         r.style.setProperty('--primary-color-light','#3a3b3c');
