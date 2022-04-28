@@ -14,7 +14,7 @@
                 <div class="fields">
                     <div class="input-field">
                         <label>Nomor Agenda</label>
-                        <input type="text" placeholder="Masukkan Nomor Agenda" required>
+                        <input placeholder="Masukkan Nomor Agenda" required>
                     </div>
                     <div class="input-field">
                         <label>Waktu Surat Aju Diterima</label>
@@ -22,7 +22,7 @@
                     </div>
                     <div class="input-field">
                         <label>Nomor Surat Aju</label>
-                        <input type="text" placeholder="Masukkan nomor surat aju" required>
+                        <input placeholder="Masukkan nomor surat aju" required>
                     </div>
                     <div class="input-field">
                         <label>Tanggal Surat Aju</label>
@@ -35,25 +35,25 @@
                 <div class="fields">
                     <div class="input-field">
                         <label>Jenis Dokumen</label>
-                        <select required>
-                            <option disabled selected>Pilih jenis dokumen</option>
-                            <option>Form 3d</option>
-                            <option>Impor</option>
-                            <option>Ekspor</option>
-                            <option>Lartas</option>
-                            <option>Uji Banding</option>
-                            <option>Barang Kiriman</option>
-                            <option>Barang Penumpang</option>
-                            <option>Lain-lain</option>
-                        </select>
+                        <input type="text" list="listDokumen" placeholder="Pilih jenis dokumen" id="jenis-dokumen">
+                        <datalist id="listDokumen">
+                            <option value="Form 3d">
+                            <option value="Impor">
+                            <option value="Ekspor">
+                            <option value="Lartas">
+                            <option value="Uji Banding">
+                            <option value="Barang Kiriman">
+                            <option value="Barang Penumpang">
+                            <option value="Lain-lain">
+                        </datalist>
                     </div>
                     <div class="input-field">
                         <label>Nomor Dokumen</label>
-                        <input type="text" placeholder="Masukkan nomor dokumen" required>
+                        <input placeholder="Masukkan nomor dokumen" required>
                     </div>
                     <div class="input-field">
                         <label>Nama Perusahaan</label>
-                        <input type="text" placeholder="Masukkan nama perusahaan" required>
+                        <input placeholder="Masukkan nama perusahaan" required>
                     </div>
                     <div class="input-field">
                         <label>Tanggal Dokumen</label>
@@ -75,7 +75,7 @@
         <div class="form second">
             <div>
                 <span class="title" id="side-by-side">Jumlah Sampel: </span>
-                <input type="number" id="jumlah-sampel" min="1" required>
+                <input type="number" id="jumlah-sampel" min="1">
                 <div class="fields">
                     <div class="input-field no-sampel" id="no-sampel">
                         <label>No Sampel</label>
@@ -84,11 +84,9 @@
                         <label>Nama Sampel</label>
                     </div>
                     <div class="fields sampel" id="fields-sampel">
-                        <div class="input-field no-sampel">
-                            <input type="text" required>
+                        <div class="input-field no-sampel" id="nomor">
                         </div>
-                        <div class="input-field nama-sampel">
-                            <input type="text" required>
+                        <div class="input-field nama-sampel" id="nama">
                         </div>
                     </div>
                 </div>
