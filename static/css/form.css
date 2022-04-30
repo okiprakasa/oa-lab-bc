@@ -159,6 +159,7 @@ form .backBtn i{
 form .buttons{
     display: flex;
     align-items: center;
+    margin-top: 0.5em;
 }
 form .buttons button , .backBtn{
     margin-right: 0.875em;
